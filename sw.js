@@ -1,9 +1,9 @@
 const CACHE_NAME = 'svit-bus-v1';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/script.js',
-  '/manifest.json'
+  './',
+  './index.html',
+  './script.js',
+  './manifest.json'
 ];
 
 self.addEventListener('install', (event) => {
@@ -19,3 +19,4 @@ self.addEventListener('fetch', (event) => {
     fetch(event.request).catch(() => caches.match(event.request))
   );
 });
+
