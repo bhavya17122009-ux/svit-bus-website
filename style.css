@@ -1,0 +1,111 @@
+/* GENERAL APP STYLING */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    user-select: none; /* Prevents text selection like an app */
+}
+
+/* CARDS */
+.card, .status-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+select, input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box; /* Fixes padding issues */
+}
+
+/* BUTTONS */
+.btn-primary {
+    background: #007bff;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* DASHBOARD SPECIFICS */
+.hidden { display: none; }
+
+.pulse-icon {
+    width: 15px;
+    height: 15px;
+    background: lime;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    box-shadow: 0 0 0 rgba(0, 255, 0, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.info-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.info-box i { font-size: 24px; color: #007bff; margin-bottom: 5px; }
+.info-box span { display: block; font-size: 20px; font-weight: bold; }
+
+/* EMERGENCY FOOTER */
+.footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.emergency-btn {
+    color: #555;
+    text-decoration: none;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emergency-btn i {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #dc3545;
+}
