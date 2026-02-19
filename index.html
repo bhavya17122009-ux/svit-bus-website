@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SVIT Smart Transit</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container" id="loginScreen">
+        <div class="logo-area">
+            <h1>🚍 SVIT Transit</h1>
+            <p>Driver Companion App</p>
+        </div>
+
+        <div class="card">
+            <label>Select Bus Number</label>
+            <select id="busSelect">
+                <option value="">-- Choose Bus --</option>
+                </select>
+
+            <label>Select Route</label>
+            <select id="routeSelect">
+                <option value="">-- Choose Route --</option>
+                </select>
+
+            <label>Driver Password</label>
+            <input type="password" id="password" placeholder="Enter PIN (123456)">
+
+            <button onclick="startTrip()" class="btn-primary">START TRIP</button>
+        </div>
+    </div>
+
+    <div class="container hidden" id="dashboardScreen">
+        <div class="status-card">
+            <div class="pulse-icon"></div>
+            <h2 id="liveRoute">Route: ...</h2>
+            <h3 id="liveBus">Bus: ...</h3>
+<p id="routeStops" style="font-size: 12px; color: #666; margin-top: 5px; line-height: 1.4;">Loading stops...</p>
+            <p id="gpsStatus" style="color:orange;">Waiting for GPS...</p>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-box">
+                <i class="fas fa-tachometer-alt"></i>
+                <span id="speedDisplay">0 km/h</span>
+                <small>Speed</small>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-satellite-dish"></i>
+                <span id="updateTime">--:--</span>
+                <small>Last Update</small>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <i class="fas fa-exclamation-triangle"></i>
+            <p><strong>DO NOT CLOSE APP</strong><br>Keep this screen open or minimize with home button.</p>
+        </div>
+
+        <button onclick="endTrip()" class="btn-danger">END TRIP</button>
+
+        <div class="footer">
+            <a href="tel:100" class="emergency-btn"><i class="fas fa-shield-alt"></i> Police</a>
+            <a href="tel:108" class="emergency-btn"><i class="fas fa-ambulance"></i> Medical</a>
+            <a href="tel:+912668263356" class="emergency-btn"><i class="fas fa-university"></i> SVIT Office</a>
+        </div>
+    </div>
+
+    <audio id="silentAudio" loop>
+        <source src="https://github.com/anars/blank-audio/raw/master/250-milliseconds-of-silence.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
